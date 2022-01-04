@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 }
 
 // connect to the Database
-const connectDatabase = require("../backend/utils/connectDB");
+const connectDatabase = require("./utils/connectDB");
 connectDatabase();
 
 // Cloudinary connection
@@ -24,8 +24,8 @@ app.use(require("express-fileupload")());
 // app.use(require('../backend/middlewares/userAuth').authChecker)
 
 // Routes
-const user = require("../backend/routes/userRoutes");
-const pics = require("../backend/routes/picRoutes");
+const user = require("./routes/userRoutes");
+const pics = require("./routes/picRoutes");
 
 app.use("/api/user", user);
 app.use("/api/pic", pics);
