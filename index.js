@@ -21,6 +21,7 @@ cloudinary.config({
 app.use(require("express").json());
 app.use(require("cookie-parser")());
 app.use(require("express-fileupload")());
+app.use(require("cors")());
 // app.use(require('../backend/middlewares/userAuth').authChecker)
 
 // Routes
@@ -35,5 +36,5 @@ app.get("/", (req, res) => {
   res.send("hit at " + port);
 });
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server running on localhost:${port}`));
